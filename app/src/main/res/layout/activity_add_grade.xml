@@ -26,13 +26,26 @@
             app:titleTextAppearance="@style/ToolbarTitleStyle"/>
 
     </com.google.android.material.appbar.AppBarLayout>
+
     <TextView
+        android:id="@+id/subject"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="142dp"
         android:layout_marginTop="70dp"
         android:layout_marginEnd="164dp"
-        android:text="Name Surname"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="142dp"
+        android:layout_marginTop="110dp"
+        android:layout_marginEnd="164dp"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -41,7 +54,7 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="150dp"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -99,7 +112,7 @@
 
 
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btn_addStudent"
+                    android:id="@+id/btn_addGrade"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/addGrade"
