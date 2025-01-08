@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">TeacherAssistant</string>
+    <string name="subjectList">Subject List</string>
+    <string name="studentList">Student List</string>
+    <string name="addSubject">Add Subject</string>
+    <string name="addGrade">Add Grade</string>
+    <string name="grade">Grade</string>
+    <string name="points">Points</string>
+    <string name="addStudent">Add Student</string>
+    <string name="firstName">First Name</string>
+    <string name="lastName">Last Name</string>
+    <string name="name">Subject Name</string>
+    <string name="hint">Type...</string>
+    <string name="day">Weekday</string>
+    <string name="time">Hour</string>
+    <string name="delete">Delete</string>
+    <string name="back">Go Back</string>
+    <string name="edit">Edit</string>
+    <string name="add">Add Grade</string>
+    <string name="album">Album</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

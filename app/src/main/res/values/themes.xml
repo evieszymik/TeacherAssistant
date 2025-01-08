@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TeacherAssistant2" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">@color/button</item>
+        <item name="android:colorBackground">@color/primary</item>
+        <item name="android:textColor">#FF000000</item>
+    </style>
+
+    <style name="ToolbarTitleStyle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">24sp</item> <!-- Zmień na pożądany rozmiar -->
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Theme.TeacherAssistant2" parent="Base.Theme.TeacherAssistant2" />
+</resources>
