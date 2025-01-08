@@ -15,6 +15,9 @@ interface StudentDao {
     @Query("SELECT * FROM student")
     suspend fun getAll(): List<Student>
 
+    @Query("SELECT * FROM student WHERE idStudent NOT IN (SELECT idStudent FROM enrollment WHERE idSubject = :idSubject)")
+    suspend fun getRest(idSubject: Int): List<Student>
+
     @Query("SELECT * FROM student WHERE idStudent = :idStudent")
     suspend fun getById(idStudent: Int): Student?
 

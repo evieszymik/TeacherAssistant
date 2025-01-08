@@ -17,11 +17,17 @@ interface EnrollmentDao {
     @Query("SELECT * FROM enrollment WHERE idStudent = :idStudent")
     suspend fun getByStudentId(idStudent: Int): List<Enrollment>
 
+    @Query("SELECT * FROM enrollment WHERE idSubject = :idSubject")
+    suspend fun getBySubjectId(idSubject: Int): List<Enrollment>
+
     @Delete
     suspend fun delete(enrollment: Enrollment)
 
     @Query("DELETE FROM enrollment WHERE idStudent= :idStudent")
     suspend fun deleteByStudentId(idStudent: Int)
+
+    @Query("DELETE FROM enrollment WHERE idStudent= :idStudent AND idSubject = :idSubject")
+    suspend fun deleteStudentFromSubject(idStudent: Int, idSubject: Int)
 
     @Query("DELETE FROM enrollment WHERE idSubject = :idSubject")
     suspend fun deleteBySubjectId(idSubject: Int)

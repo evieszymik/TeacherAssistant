@@ -57,45 +57,43 @@ class StudentListActivity : AppCompatActivity() {
                         view.findViewById<TextView>(R.id.text_view_item).text =
                             "${student.name} ${student.surname}"
 
-                        // Obsługa kliknięcia na uczestnika
-                        /*view.setOnClickListener {
-                            val intent = Intent(this@StudentListActivity, ParticipantDetailsActivity::class.java).apply {
-                                putExtra("participantId", participant.idUczestnika)
-                                putExtra("participantName", participant.imie)
-                                putExtra("participantSurname", participant.nazwisko)
+
+                        view.setOnClickListener {
+                            val intent = Intent(this@StudentListActivity, StudentDetails2Activity::class.java).apply {
+                                putExtra("studentId", student.idStudent)
+                                putExtra("studentName", student.name)
+                                putExtra("studentSurname", student.surname)
+                                putExtra("studentAlbum", student.album)
                             }
                             startActivity(intent)
-                        }*/
+                        }
 
-                        // Obsługa przycisków edycji i usuwania
-                        /*view.findViewById<Button>(R.id.btn_edit).setOnClickListener {
-                            val editIntent = Intent(this@ShowParticipantsActivity, AddParticipantActivity::class.java).apply {
-                                putExtra("participantId", participant.idUczestnika)
-                                putExtra("participantName", participant.imie)
-                                putExtra("participantSurname", participant.nazwisko)
+                        view.findViewById<Button>(R.id.btn_edit).setOnClickListener {
+                            val editIntent = Intent(this@StudentListActivity, AddStudentActivity::class.java).apply {
+                                putExtra("studentId", student.idStudent)
+                                putExtra("studentName", student.name)
+                                putExtra("studentSurname", student.surname)
+                                putExtra("studentAlbum", student.album)
                             }
                             startActivity(editIntent)
-                        }*/
+                        }
 
-                        /*view.findViewById<Button>(R.id.btn_delete).setOnClickListener {
+                        view.findViewById<Button>(R.id.btn_delete).setOnClickListener {
                             lifecycleScope.launch {
-                                val db = AppDatabase.getInstance(this@ShowParticipantsActivity)
-                                // Najpierw usuń powiązania z wydarzeniami
-                                db.wydarzenieUczestnikDao().deleteByUczestnikId(participant.idUczestnika)
-                                // Następnie usuń uczestnika
-                                db.uczestnikDao().delete(participant)
+                                val db = AppDatabase.getInstance(this@StudentListActivity)
+                                db.enrollmentDao().deleteByStudentId(student.idStudent)
+                                db.studentDao().delete(student)
 
                                 runOnUiThread {
                                     Toast.makeText(
-                                        this@ShowParticipantsActivity,
-                                        "Uczestnik usunięty",
+                                        this@StudentListActivity,
+                                        "Student deleted",
                                         Toast.LENGTH_SHORT
                                     ).show()
-                                    loadParticipants() // Odśwież listę
+                                    loadStudents()
                                 }
                             }
-                        }*/
-
+                        }
                         return view
                     }
                 }

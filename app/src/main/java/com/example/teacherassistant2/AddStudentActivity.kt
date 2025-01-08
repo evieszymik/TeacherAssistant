@@ -7,7 +7,6 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
@@ -32,13 +31,21 @@ class AddStudentActivity : AppCompatActivity() {
         val albumInput = findViewById<EditText>(R.id.edit_text_album)
         val addButton = findViewById<Button>(R.id.btn_addStudent)
 
+        intent.extras?.let { bundle ->
+            studentId = bundle.getInt("studentId", 0)
+            if (studentId != 0) {
+                isEditMode = true
+                nameInput.setText(bundle.getString("studentName", ""))
+                surnameInput.setText(bundle.getString("studentSurname", ""))
+                albumInput.setText(bundle.getInt("studentAlbum", 0).toString())
+                addButton.text = "Save changes"
+            }
+        }
+
         addButton.setOnClickListener{
             val name =nameInput.text.toString()
             val surname =surnameInput.text.toString()
             val album =albumInput.text.toString()
-
-            //val grades: MutableList<Double> = mutableListOf()
-            val grades: Array<Double> = arrayOf()
 
             if (name.isNotBlank() && surname.isNotBlank() && album.isNotBlank()) {
                 val student = Student(
@@ -55,7 +62,7 @@ class AddStudentActivity : AppCompatActivity() {
                     runOnUiThread {
                         Toast.makeText(
                             this@AddStudentActivity,
-                            if (isEditMode) "Uczestnik zaktualizowany" else "Student added",
+                            if (isEditMode) "Student edited" else "Student added",
                             Toast.LENGTH_SHORT
                         ).show()
                         finish()
@@ -63,7 +70,7 @@ class AddStudentActivity : AppCompatActivity() {
                 }
                 startActivity(Intent(this, StudentListActivity::class.java))
             } else {
-                Toast.makeText(this, "Wypełnij wszystkie pola", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Fill all fields", Toast.LENGTH_SHORT).show()
             }
         }
     }
