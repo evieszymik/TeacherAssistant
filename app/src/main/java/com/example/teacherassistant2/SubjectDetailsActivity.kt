@@ -123,8 +123,8 @@ class SubjectDetailsActivity : AppCompatActivity() {
 
                         view.findViewById<Button>(R.id.btn_delete).setOnClickListener {
                             lifecycleScope.launch {
-                                val db = AppDatabase.getInstance(this@SubjectDetailsActivity)
-                                db.enrollmentDao().deleteStudentFromSubject(student.idStudent,subjectId)
+                                val database = AppDatabase.getInstance(this@SubjectDetailsActivity)
+                                database.enrollmentDao().deleteStudentFromSubject(student.idStudent,subjectId)
 
                                 runOnUiThread {
                                     Toast.makeText(
