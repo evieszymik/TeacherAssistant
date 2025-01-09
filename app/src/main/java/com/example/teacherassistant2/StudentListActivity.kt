@@ -1,6 +1,6 @@
 package com.example.teacherassistant2
 
-import android.app.ComponentCaller
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -51,6 +51,7 @@ class StudentListActivity : AppCompatActivity() {
                     R.layout.student_item,
                     students
                 ) {
+                    @SuppressLint("SetTextI18n")
                     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
                         val view = convertView ?: layoutInflater.inflate(R.layout.student_item, parent, false)
                         val student = getItem(position)!!

@@ -11,7 +11,6 @@
     <string name="firstName">First Name</string>
     <string name="lastName">Last Name</string>
     <string name="name">Subject Name</string>
-    <string name="hint">Type...</string>
     <string name="day">Weekday</string>
     <string name="time">Hour</string>
     <string name="delete">Delete</string>
