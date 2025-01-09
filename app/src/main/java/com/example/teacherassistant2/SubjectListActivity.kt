@@ -31,6 +31,7 @@ class SubjectListActivity : AppCompatActivity() {
         buttonAddSubject=findViewById(R.id.buttonAdd)
         buttonAddSubject.setOnClickListener{
             startActivity(Intent(this, AddSubjectActivity::class.java))
+            finish()
         }
 
         loadSubjects()
@@ -75,6 +76,7 @@ class SubjectListActivity : AppCompatActivity() {
                                 putExtra("subjectWeekday", subject.weekday)
                                 putExtra("subjectHour", subject.time)
                             }
+                            finish()
                             startActivity(editIntent)
                         }
 

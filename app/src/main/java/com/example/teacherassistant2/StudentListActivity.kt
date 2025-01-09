@@ -1,5 +1,6 @@
 package com.example.teacherassistant2
 
+import android.app.ComponentCaller
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -33,12 +34,12 @@ class StudentListActivity : AppCompatActivity() {
 
         buttonAddStudent.setOnClickListener{
             startActivity(Intent(this, AddStudentActivity::class.java))
+            finish()
         }
 
         loadStudents()
     }
-
-    private fun loadStudents() {
+    fun loadStudents() {
         lifecycleScope.launch {
             val students = AppDatabase.getInstance(this@StudentListActivity)
                 .studentDao()
@@ -75,6 +76,7 @@ class StudentListActivity : AppCompatActivity() {
                                 putExtra("studentSurname", student.surname)
                                 putExtra("studentAlbum", student.album)
                             }
+                            finish()
                             startActivity(editIntent)
                         }
 
