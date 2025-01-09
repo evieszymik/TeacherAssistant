@@ -8,5 +8,6 @@ import androidx.room.Entity
 )
 data class Enrollment(
     val idStudent: Int,
-    val idSubject: Int
+    val idSubject: Int,
+    val grades: String = ""
 )

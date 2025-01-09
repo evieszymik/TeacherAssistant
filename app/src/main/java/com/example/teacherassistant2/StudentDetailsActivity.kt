@@ -6,6 +6,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 class StudentDetailsActivity : AppCompatActivity() {
     private var studentId: Int = 0
@@ -30,6 +32,14 @@ class StudentDetailsActivity : AppCompatActivity() {
                 name.text = bundle.getString("studentName", "") + " " +bundle.getString("studentSurname", "")
                 album.text = bundle.getInt("studentAlbum", 0).toString()
                 subject.text = bundle.getString("subjectName", "")
+                val subjectId = bundle.getInt("subjectId",0)
+                lifecycleScope.launch {
+                    val item = AppDatabase.getInstance(this@StudentDetailsActivity)
+                        .enrollmentDao()
+                        .getByStudentAndSubject(studentId, subjectId)
+
+                    grades.text=item?.grades
+                }
             }
         }
     }

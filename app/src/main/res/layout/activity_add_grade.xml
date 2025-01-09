@@ -104,7 +104,7 @@
                     app:boxStrokeWidthFocused="1dp">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/edit_text_surname"
+                        android:id="@+id/points"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="numberDecimal" />

@@ -106,6 +106,7 @@ class SubjectDetailsActivity : AppCompatActivity() {
                                 putExtra("studentSurname", student.surname)
                                 putExtra("studentAlbum", student.album)
                                 putExtra("subjectName", subjectName)
+                                putExtra("subjectId", subjectId)
                             }
                             startActivity(intent)
                         }

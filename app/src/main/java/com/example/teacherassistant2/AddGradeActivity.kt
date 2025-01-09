@@ -3,12 +3,16 @@ package com.example.teacherassistant2
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.lifecycleScope
+import kotlinx.coroutines.launch
 
 class AddGradeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,11 +34,46 @@ class AddGradeActivity : AppCompatActivity() {
 
         val studentName = intent.getStringExtra("studentName") ?: ""
         val studentSurname = intent.getStringExtra("studentSurname") ?: ""
+        val studentId = intent.getIntExtra("studentId", 0)
+        val subjectId = intent.getIntExtra("subjectId", 0)
         findViewById<TextView>(R.id.name).text="$studentName $studentSurname"
         findViewById<TextView>(R.id.subject).text=intent.getStringExtra("subjectName") ?: ""
 
-        findViewById<Button>(R.id.btn_addGrade).setOnClickListener{
 
+        findViewById<Button>(R.id.btn_addGrade).setOnClickListener{
+            val points = findViewById<EditText>(R.id.points).text.toString()
+            val grade = spinner.selectedItem
+            var gradeList = ""
+            val gradeFinal: String = points.ifBlank {
+                grade.toString()
+            }
+            lifecycleScope.launch {
+                val item = AppDatabase.getInstance(this@AddGradeActivity)
+                    .enrollmentDao()
+                    .getByStudentAndSubject(studentId, subjectId)
+
+                gradeList+=item?.grades
+                gradeList+= "$gradeFinal, "
+
+                lifecycleScope.launch {
+                    val enrollment = Enrollment(
+                        idStudent = studentId,
+                        idSubject = subjectId,
+                        grades = gradeList
+                    )
+                    AppDatabase.getInstance(this@AddGradeActivity)
+                        .enrollmentDao().insert(enrollment)
+
+                    runOnUiThread {
+                        Toast.makeText(
+                            this@AddGradeActivity,
+                            "Grade added",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        finish()
+                    }
+                }
+            }
         }
     }
 }
