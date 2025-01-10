@@ -53,42 +53,42 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/student"
-                        android:textSize="16sp"
+                        android:textSize="20sp"
                         android:layout_marginBottom="5dp"/>
 
                     <TextView
                         android:id="@+id/name"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
-                        android:layout_marginBottom="20dp"/>
+                        android:textSize="24sp"
+                        android:layout_marginBottom="20dp" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/album"
-                        android:textSize="16sp"
+                        android:textSize="20sp"
                         android:layout_marginBottom="5dp"/>
 
                     <TextView
                         android:id="@+id/album"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
+                        android:textSize="24sp"
                         android:layout_marginBottom="20dp"/>
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/subjects"
-                        android:textSize="16sp"
+                        android:textSize="20sp"
                         android:layout_marginBottom="5dp"/>
 
                     <TextView
                         android:id="@+id/subjects"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textSize="20sp"
+                        android:textSize="24sp"
                         android:layout_marginBottom="20dp"/>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

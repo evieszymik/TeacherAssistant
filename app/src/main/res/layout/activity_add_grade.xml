@@ -81,8 +81,8 @@
                     android:layout_marginBottom="16dp"
                     android:hint="@string/grade"
                     app:hintTextColor="@color/black"
-                    app:boxStrokeColor="@color/black"
-                    app:boxStrokeWidthFocused="1dp">
+                    app:boxStrokeColor="@color/border"
+                    app:boxStrokeWidthFocused="2dp">
                     <Spinner
                         android:id="@+id/spinnerOptions"
                         android:layout_width="match_parent"
@@ -100,28 +100,31 @@
                     android:hint="@string/points"
                     android:textSize="18sp"
                     app:hintTextColor="@color/black"
-                    app:boxStrokeColor="@color/black"
-                    app:boxStrokeWidthFocused="1dp">
+                    app:boxStrokeColor="@color/border"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxStrokeWidth="2dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/points"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="numberDecimal" />
+                        android:inputType="numberDecimal"
+                        />
                 </com.google.android.material.textfield.TextInputLayout>
 
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_addGrade"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/addGrade"
-                    app:icon="@android:drawable/ic_menu_save"
+                    android:layout_height="60dp"
                     android:layout_gravity="center_horizontal"
+                    android:backgroundTint="@color/button"
+                    android:text="@string/addGrade"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    app:iconTint="@color/black"
-                    android:backgroundTint="@color/button" />
+                    app:icon="@android:drawable/ic_menu_save"
+                    app:iconTint="@color/black" />
 
             </LinearLayout>
         </com.google.android.material.card.MaterialCardView>

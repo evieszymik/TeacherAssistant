@@ -37,13 +37,13 @@
             <Button
                 android:id="@+id/subjectList"
                 android:layout_width="350dp"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 android:layout_marginStart="45dp"
-                android:layout_marginTop="250dp"
+                android:layout_marginTop="220dp"
                 android:layout_marginEnd="45dp"
                 android:text="@string/subjectList"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -51,13 +51,13 @@
             <Button
                 android:id="@+id/studentList"
                 android:layout_width="350dp"
-                android:layout_height="wrap_content"
+                android:layout_height="80dp"
                 android:layout_marginStart="45dp"
-                android:layout_marginTop="350dp"
+                android:layout_marginTop="320dp"
                 android:layout_marginEnd="45dp"
                 android:text="@string/studentList"
                 android:textColor="@color/black"
-                android:textSize="25sp"
+                android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

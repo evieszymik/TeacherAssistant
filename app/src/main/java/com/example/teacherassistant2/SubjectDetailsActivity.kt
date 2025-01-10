@@ -56,7 +56,7 @@ class SubjectDetailsActivity : AppCompatActivity() {
                 list.add(Pair("${student.name} ${student.surname}", student.idStudent))
             }
 
-            val builder = AlertDialog.Builder(this@SubjectDetailsActivity)
+            val builder = AlertDialog.Builder(this@SubjectDetailsActivity, R.style.CustomAlertDialog)
             val options = list.map { it.first }.toTypedArray()
             builder.setTitle("Add Student to $subjectName")
                 .setItems(options) { _, which ->
@@ -90,14 +90,15 @@ class SubjectDetailsActivity : AppCompatActivity() {
             runOnUiThread {
                 val adapter = object : ArrayAdapter<Student>(
                     this@SubjectDetailsActivity,
-                    R.layout.student_item2,
+                    R.layout.student_item,
                     students
                 ) {
                     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
-                        val view = convertView ?: layoutInflater.inflate(R.layout.student_item2, parent, false)
+                        val view = convertView ?: layoutInflater.inflate(R.layout.student_item, parent, false)
                         val student = getItem(position)!!
 
                         view.findViewById<TextView>(R.id.text_view_item).text = "${student.name} ${student.surname}"
+                        view.findViewById<Button>(R.id.btn_edit).text="ADD GRADE"
 
                         view.setOnClickListener {
                             val intent = Intent(this@SubjectDetailsActivity, StudentDetailsActivity::class.java).apply {
@@ -111,7 +112,7 @@ class SubjectDetailsActivity : AppCompatActivity() {
                             startActivity(intent)
                         }
 
-                        view.findViewById<Button>(R.id.btn_addGrade).setOnClickListener {
+                        view.findViewById<Button>(R.id.btn_edit).setOnClickListener {
                             val intent = Intent(this@SubjectDetailsActivity, AddGradeActivity::class.java).apply {
                                 putExtra("studentId", student.idStudent)
                                 putExtra("studentName", student.name)

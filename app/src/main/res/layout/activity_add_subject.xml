@@ -56,8 +56,9 @@
                         android:layout_marginBottom="16dp"
                         android:hint="@string/name"
                         app:hintTextColor="@color/black"
-                        app:boxStrokeColor="@color/black"
-                        app:boxStrokeWidthFocused="1dp">
+                        app:boxStrokeColor="@color/border"
+                        app:boxStrokeWidthFocused="2dp"
+                        app:boxStrokeWidth="2dp">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/edit_text_name"
@@ -72,8 +73,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="24dp"
-                        android:hint="@string/day"
-                        android:textSize="18sp">
+                        android:textSize="18sp"
+                        app:boxStrokeWidth="2dp"
+                        app:boxStrokeColor="@color/border"
+                        app:boxStrokeWidthFocused="2dp">
 
                         <Spinner
                             android:id="@+id/spinnerOptions"
@@ -91,8 +94,9 @@
                         android:layout_marginBottom="24dp"
                         android:hint="@string/time"
                         app:hintTextColor="@color/black"
-                        app:boxStrokeColor="@color/black"
-                        app:boxStrokeWidthFocused="1dp">
+                        app:boxStrokeColor="@color/border"
+                        app:boxStrokeWidthFocused="2dp"
+                        app:boxStrokeWidth="2dp">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/edit_text_time"
@@ -108,7 +112,7 @@
                     <com.google.android.material.button.MaterialButton
                         android:id="@+id/btn_addSubject"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="60dp"
                         android:text="@string/addSubject"
                         app:icon="@android:drawable/ic_menu_save"
                         android:layout_gravity="center_horizontal"

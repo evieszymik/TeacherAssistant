@@ -56,8 +56,9 @@
                     android:layout_marginBottom="16dp"
                     android:hint="@string/firstName"
                     app:hintTextColor="@color/black"
-                    app:boxStrokeColor="@color/black"
-                    app:boxStrokeWidthFocused="1dp">
+                    app:boxStrokeColor="@color/border"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxStrokeWidth="2dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edit_text_name"
@@ -75,8 +76,9 @@
                     android:hint="@string/lastName"
                     android:textSize="18sp"
                     app:hintTextColor="@color/black"
-                    app:boxStrokeColor="@color/black"
-                    app:boxStrokeWidthFocused="1dp">
+                    app:boxStrokeColor="@color/border"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:boxStrokeWidth="2dp">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edit_text_surname"
@@ -92,8 +94,10 @@
                     android:layout_marginBottom="24dp"
                     android:hint="@string/album"
                     app:hintTextColor="@color/black"
-                    app:boxStrokeColor="@color/black"
-                    app:boxStrokeWidthFocused="1dp">
+                    app:boxStrokeColor="@color/border"
+                    app:boxStrokeWidth="2dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    >
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/edit_text_album"
@@ -106,7 +110,7 @@
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/btn_addStudent"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="60dp"
                     android:text="@string/addStudent"
                     app:icon="@android:drawable/ic_menu_save"
                     android:layout_gravity="center_horizontal"
